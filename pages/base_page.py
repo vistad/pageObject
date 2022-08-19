@@ -1,10 +1,7 @@
+
 from selenium.common.exceptions import NoSuchElementException
 
-import pytest
-from selenium.webdriver.common.by import By
-
-
-class BasePage():
+class BasePage():   # imports browser from conftest.py and describes methods applicable on any page
     def __init__(self, browser, url, timeout=10):
         self.browser = browser
         self.url = url
