@@ -1,7 +1,8 @@
+# imports browser from conftest.py and describes general objects and methods applicable on any page
 
 from selenium.common.exceptions import NoSuchElementException
 
-class BasePage():   # imports browser from conftest.py and describes methods applicable on any page
+class BasePage():
     def __init__(self, browser, url, timeout=10):
         self.browser = browser
         self.url = url
