@@ -6,8 +6,10 @@ from .login_page import LoginPage
 
 class MainPage(BasePage):
     def go_to_login_page(self):
-        login_link = self.browser.find_element(*MainPageLocators.LOGIN_LINK) # * means a tuple
-        login_link.click() 
+        login_link = self.browser.find_element(*MainPageLocators.LOGIN_LINK) # * means a tuple is passed
+        login_link.click()
+#        alert = self.browser.switch_to.alert   # if alert is required
+#        alert.accept()
 # 2nd way - add this line:
 #        return LoginPage(browser=self.browser, url=self.browser.current_url)
 
