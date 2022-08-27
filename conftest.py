@@ -11,7 +11,6 @@ def pytest_addoption(parser):   # reads the language param from the CLI
 def browser(request):
     user_language = request.config.getoption("language")
     print(f"\033[38;5;63m\nstart browser for test..\033[0;0m \033[38;5;39m \nlanguage:{user_language} \033[0;0m")
-#    print(f"\nstart browser for test..\nlanguage:{user_language}")
         
 
     options = Options()

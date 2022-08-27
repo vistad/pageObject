@@ -6,9 +6,6 @@ class BasePageLocators:
     BASKET_BUTTON = (By.CSS_SELECTOR, "a.btn.btn-default[href$='/basket/']")
     USER_ICON = (By.CSS_SELECTOR, ".icon-user")
 
-class MainPageLocators():
-    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")   # deprecated
-
 class LoginPageLocators():
     LOGIN_URL = (By.CSS_SELECTOR, "#login_link")
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
