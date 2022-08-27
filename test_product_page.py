@@ -4,12 +4,13 @@
 # pytest -vs --tb=line --language=en test_product_page.py::test_message_disappeared_after_adding_product_to_cart
 # pytest -vs --tb=line --language=en test_product_page.py::test_guest_should_see_login_link_on_product_page
 # pytest -vs --tb=line --language=en test_product_page.py::test_guest_can_go_to_login_page_from_product_page
-
+# pytest -vs --tb=line --language=en test_product_page.py::test_guest_cant_see_product_in_basket_opened_from_product_page
 
 
 import pytest
 from .pages.product_page import ProductPage
 from .pages.base_page import BasePage
+from .pages.basket_page import BasketPage
 link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
 
 
@@ -59,6 +60,13 @@ def test_guest_can_go_to_login_page_from_product_page(browser):
     page.go_to_login_page()
 
 
+def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
+    page = BasePage(browser, link)
+    page.open()                     # Гость открывает страницу товара
+    page.go_to_basket_page()        # Переходит в корзину по кнопке в шапке 
+    basket_page = BasketPage(browser, browser.current_url)  # change focus to the cart page
+    basket_page.should_be_cart_is_empty()   # cart should be empty
+    basket_page.should_be_text_cart_is_empty()    # text cart is empty exists
 
 
 
