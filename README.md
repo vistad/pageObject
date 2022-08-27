@@ -1,15 +1,26 @@
 # pageObject
-.gitignore file added\n
-login page check added\n
-conftest fixture added\n
-language selection added\n
-ProductPage class and testcases added\n
-Captcha checking (math) added\n
-MainPage class methods moved to BasePage class and bugfixing done\n
-parametrisation added\n
-negative testing (element not present) added\n
-colored messages output added\n
-XFail testcases added\n
-basket page and test cases added\n
+.gitignore file added
+
+login page check added
+
+conftest fixture added
+
+language selection added
+
+ProductPage class and testcases added
+
+Captcha checking (math) added
+
+MainPage class methods moved to BasePage class and bugfixing done
+
+parametrisation added
+
+negative testing (element not present) added
+
+colored messages output added
+
+XFail testcases added
+
+basket page and test cases added
 
 
