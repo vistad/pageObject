@@ -6,9 +6,3 @@ from .login_page import LoginPage
 class MainPage(BasePage):
     pass
 
-"""
-alternative class definiton:
-    def __init__(self, *args, **kwargs):
-        super(MainPage, self).__init__(*args, **kwargs)
-"""
-

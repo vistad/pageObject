@@ -1,5 +1,3 @@
-# Реализуйте необходимые проверки, в том числе отрицательную, которую мы обсуждали в предыдущих шагах. 
-  
 from .base_page import BasePage
 from .locators import BasketPageLocators
 

@@ -1,5 +1,5 @@
 """
-pytest -vs --tb=line --language=en test_main_page.py
+pytest -v --tb=line --language=en test_main_page.py
 """
 
 from .pages.main_page import MainPage
