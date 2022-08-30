@@ -1,6 +1,5 @@
 """
-pytest -vs --tb=line --language=en test_product_page.py::pytest.mark.current
-pytest -vs --tb=line --language=en test_product_page.py::test_user_can_add_product_to_basket
+pytest -v --tb=line --language=en -m need_review test_product_page.py
 """
 import pytest
 from .pages.product_page import ProductPage
@@ -27,6 +26,7 @@ class TestUserAddToBasketFromProductPage:
         page.open()
         page.should_not_be_success_message()
 
+    @pytest.mark.need_review
     def test_user_can_add_product_to_basket(self, browser):
         page = ProductPage(browser, link)
         page.open()
@@ -35,13 +35,12 @@ class TestUserAddToBasketFromProductPage:
         page.should_be_add2cart_price()
 
 
-
-
-"""
 @pytest.mark.parametrize('number', ['0', '1', '2', '3', '4', '5', '6',
                                   pytest.param("7", marks=pytest.mark.xfail),
                                   '8', '9'])   #parametrization adds numbers to the link
-def test_guest_can_add_product_to_cart(browser, number):
+
+@pytest.mark.need_review
+def test_guest_can_add_product_to_basket(browser, number):
     link_param = f'{link}?promo=offer{number}'
     page = ProductPage(browser, link_param) # init PageObject, pass an instance of driver and link_param to the constr
     page.open()                         # opens the page
@@ -76,27 +75,20 @@ def test_guest_should_see_login_link_on_product_page(browser):
     page.open()
     page.should_be_login_link()
 
-
+@pytest.mark.need_review
 def test_guest_can_go_to_login_page_from_product_page(browser):
     page = ProductPage(browser, link)
     page.open()
     page.go_to_login_page()
 
-
+@pytest.mark.need_review
 def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
     page = BasePage(browser, link)
-    page.open()                     # Гость открывает страницу товара
-    page.go_to_basket_page()        # Переходит в корзину по кнопке в шапке 
-    basket_page = BasketPage(browser, browser.current_url)  # change focus to the cart page
+    page.open()        
+    page.go_to_basket_page()
+    basket_page = BasketPage(browser, browser.current_url)
     basket_page.should_be_cart_is_empty()   # cart should be empty
     basket_page.should_be_text_cart_is_empty()    # text cart is empty exists
-"""
-
-
-
-
-
-
 
 
 

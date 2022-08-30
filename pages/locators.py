@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 class MainPageLocators():
     pass
 
-class BasePageLocators():   # (object)?
+class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
     BASKET_BTN = (By.CSS_SELECTOR, "span a.btn-default[href$='/basket/']")
@@ -19,9 +19,9 @@ class LoginPageLocators():
     REG_BTN = (By.CSS_SELECTOR, '[name="registration_submit"]')
 
 class ProductPageLocators():
-    PRODUCT_NAME = (By.CSS_SELECTOR, ".product_main h1")    # locator of the product name
-    PRODUCT_PRICE = (By.CSS_SELECTOR, ".product_main .price_color")  # locator of the product price
-    ADD2CART_BTN = (By.CSS_SELECTOR, "button.btn-add-to-basket")    # locator of the button
+    PRODUCT_NAME = (By.CSS_SELECTOR, ".product_main h1")
+    PRODUCT_PRICE = (By.CSS_SELECTOR, ".product_main .price_color")
+    ADD2CART_BTN = (By.CSS_SELECTOR, "button.btn-add-to-basket")
     SUCCESS_MSG = (By.CSS_SELECTOR, "#messages strong")
     ADD2CART_PRICE = (By.CSS_SELECTOR, "div.alertinner>p strong")
 

@@ -27,3 +27,5 @@ pytest.ini added
 
 user registration added
 
+files are prepared for review
+
