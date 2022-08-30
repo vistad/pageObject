@@ -23,4 +23,7 @@ XFail testcases added
 
 basket page and test cases added
 
+pytest.ini added
+
+user registration added
 

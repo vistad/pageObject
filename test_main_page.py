@@ -1,16 +1,32 @@
 # pytest -vs --tb=line --language=en test_main_page.py
 # pytest -vs --tb=line --language=en test_main_page.py::test_guest_cant_see_product_in_cart_opened_from_main_page
-
+# pytest -vs --tb=line --language=en test_main_page.py -m login_guest
 
 #from .pages.main_page import MainPage
+import pytest
 from .pages.base_page import BasePage
 from .pages.product_page import ProductPage
 from .pages.login_page import LoginPage
 from .pages.basket_page import BasketPage
 link = "http://selenium1py.pythonanywhere.com/"
 
+@pytest.mark.login_guest
+class TestLoginFromMainPage():
+    def test_guest_can_go_to_login_page(self, browser):     
+        page = BasePage(browser, link)
+        page.open()
+        page.go_to_login_page()
+        login_page = LoginPage(browser, browser.current_url)
+        login_page.should_be_login_page()
+
+    def test_guest_should_see_login_link(self, browser):
+        page = BasePage(browser, link)
+        page.open()
+        page.should_be_login_link()
+
+
 # 1st way
-def test_guest_can_go_to_login_page(browser):
+def test_guest_can_go_to_login_page(self, browser):
     page = BasePage(browser, link)   # initialize the Page Object, pass an instance of driver and url to the constructor
     page.open()                      # open the page
     page.go_to_login_page()          # use the page method - go to the login page
@@ -18,15 +34,13 @@ def test_guest_can_go_to_login_page(browser):
     login_page.should_be_login_page()                    # check the current url is the login page
 
 # 2nd way
-"""
 def test_guest_can_go_to_login_page(browser):
     page = MainPage(browser, link)
     page.open()
     login_page = page.go_to_login_page()
     login_page.should_be_login_page()
-"""
 
-def test_guest_cant_see_product_in_cart_opened_from_main_page(browser):
+def test_guest_cant_see_product_in_cart_opened_from_main_page(self, browser):
     page = BasePage(browser, link)
     page.open()                     # Opens the page
     page.go_to_basket_page()          # goes to the cart throught the header cart button

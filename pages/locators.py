@@ -10,9 +10,13 @@ class BasePageLocators():   # (object)?
     USER_ICON = (By.CSS_SELECTOR, ".icon-user")
 
 class LoginPageLocators():
-    LOGIN_URL = (By.CSS_SELECTOR, "#login_link")
-    LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
-    REGISTER_FORM = (By.CSS_SELECTOR, "#register_form")
+    LOGIN_URL = (By.CSS_SELECTOR, '#login_link')
+    LOGIN_FORM = (By.CSS_SELECTOR, '#login_form')
+    REGISTER_FORM = (By.CSS_SELECTOR, '#register_form')
+    REG_EMAIL_INPUT = (By.CSS_SELECTOR, '#id_registration-email')
+    REG_PW1_INPUT = (By.CSS_SELECTOR, '#id_registration-password1')
+    REG_PW2_INPUT = (By.CSS_SELECTOR, '#id_registration-password2')
+    REG_BTN = (By.CSS_SELECTOR, '[name="registration_submit"]')
 
 class ProductPageLocators():
     PRODUCT_NAME = (By.CSS_SELECTOR, ".product_main h1")    # locator of the product name
