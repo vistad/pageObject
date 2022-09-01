@@ -1,3 +1,8 @@
+# To test PageObjectModel tests only these packages are important:
+# selenium==4.3.0
+# pytest==7.1.2
+# Faker==14.1.0
+# The rest are not likely to be important
 appdirs==1.4.4
 apsw==3.36.0.post1
 apt-clone==0.2.1
